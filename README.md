@@ -21,7 +21,7 @@ One file per gameweek, at `archive/<season>/gw<n>.json`. Written in two phases.
 | `hoursBefore` | how long before the deadline — the number that matters |
 | `rev` | the engine commit that produced it |
 | `odds.src` | `odds-api` for live market prices |
-| `fixtures[]` | the prices as fitted, the fitted goal rates (`lam`), and seven probabilities per match (`p`): home/draw/away, over 2.5, both teams to score, and a clean sheet for each side |
+| `fixtures[]` | the fitted goal rates (`lam`), the Dixon-Coles correction (`rho`), and seven probabilities per match (`p`): home/draw/away, over 2.5, both teams to score, and a clean sheet for each side |
 | `players[]` | expected points (`ep`), doubled for the armband (`cap`), clean-sheet and two-goal probabilities, the seven-part points breakdown (`br`), expected minutes (`xm`), and ownership at the time (`own`) |
 | `pick` | the highest projected captain |
 | `crowd` | the most-*owned* eligible captain — the crowd proxy available before a deadline |
@@ -54,17 +54,24 @@ us on, and the part most likely to be wrong, especially early in a season.
 
 ## What is deliberately not here
 
-Each player row carries expected points, the clean-sheet and two-goal
-probabilities, ownership, price, and what they actually returned. It does not
-carry the component-by-component breakdown of how the projection was built, or
-the expected-minutes figure behind it.
+Two things are held back, for two different reasons.
 
-That is a deliberate line, and worth stating rather than hiding. Those internals
-are not needed to check anything claimed here — the pick, the ranking, the
-calibration and the timestamps are all verifiable without them — but published
-across a whole season they would amount to a specification of the player model.
-The fixture-level numbers are published in full precisely because they are *not*
-ours: anyone with the same odds can re-derive them.
+**The model's internals.** Each player row carries expected points, the
+clean-sheet and two-goal probabilities, ownership, price, and what they actually
+returned — but not the component-by-component breakdown of how the projection
+was built, nor the expected-minutes figure behind it. Those are not needed to
+check anything claimed here; across a whole season they would amount to a
+specification of the player model.
+
+**The bookmakers' prices.** The odds themselves come from a paid data provider
+whose terms allow their use inside an application like topb.in, but not
+redistribution as downloadable data files. So this archive publishes what the
+model made of the prices — the fitted goal rates and the probabilities — rather
+than the prices themselves. Those fitted numbers are the model's output, and
+they are what the predictions here actually rest on.
+
+Neither omission affects what this repository is for. The pick, the ranking, the
+probabilities and the timestamps are all here, and all checkable.
 
 ## Identifiers
 
