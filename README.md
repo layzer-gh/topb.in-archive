@@ -52,6 +52,20 @@ We publish them so the fit can be checked, not as evidence of an edge.
 player takes, and the conversion into FPL points — that is the part worth judging
 us on, and the part most likely to be wrong, especially early in a season.
 
+## What is deliberately not here
+
+Each player row carries expected points, the clean-sheet and two-goal
+probabilities, ownership, price, and what they actually returned. It does not
+carry the component-by-component breakdown of how the projection was built, or
+the expected-minutes figure behind it.
+
+That is a deliberate line, and worth stating rather than hiding. Those internals
+are not needed to check anything claimed here — the pick, the ranking, the
+calibration and the timestamps are all verifiable without them — but published
+across a whole season they would amount to a specification of the player model.
+The fixture-level numbers are published in full precisely because they are *not*
+ours: anyone with the same odds can re-derive them.
+
 ## Identifiers
 
 Players and clubs use FPL's persistent `code`, not the season-scoped `id`, so a
