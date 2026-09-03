@@ -3100,7 +3100,7 @@
   216051
  ],
  "actuals": {
-  "checkedAt": "2026-09-01T16:46:33.454Z",
+  "checkedAt": "2026-09-02T12:30:30.624Z",
   "avgScore": 81,
   "highest": 161,
   "mostCap": 223094,
@@ -3110,6 +3110,74 @@
    "c": 141746,
    "pts": 23
   },
-  "dreamTeamPts": 143
+  "dreamTeamPts": 143,
+  "dreamTeam": [
+   {
+    "c": 473284,
+    "n": "Tzolakis",
+    "pos": 1,
+    "pts": 10
+   },
+   {
+    "c": 17761,
+    "n": "Tarkowski",
+    "pos": 2,
+    "pts": 12
+   },
+   {
+    "c": 487838,
+    "n": "Hall",
+    "pos": 2,
+    "pts": 11
+   },
+   {
+    "c": 463726,
+    "n": "Dedić",
+    "pos": 2,
+    "pts": 11
+   },
+   {
+    "c": 466075,
+    "n": "Calafiori",
+    "pos": 2,
+    "pts": 11
+   },
+   {
+    "c": 141746,
+    "n": "B.Fernandes",
+    "pos": 3,
+    "pts": 23
+   },
+   {
+    "c": 466052,
+    "n": "Cherki",
+    "pos": 3,
+    "pts": 14
+   },
+   {
+    "c": 60307,
+    "n": "Groß",
+    "pos": 3,
+    "pts": 13
+   },
+   {
+    "c": 222531,
+    "n": "Gibbs-White",
+    "pos": 3,
+    "pts": 13
+   },
+   {
+    "c": 503139,
+    "n": "Scott",
+    "pos": 3,
+    "pts": 12
+   },
+   {
+    "c": 223094,
+    "n": "Haaland",
+    "pos": 4,
+    "pts": 13
+   }
+  ]
  }
 }

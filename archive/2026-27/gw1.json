@@ -2963,7 +2963,7 @@
   486672
  ],
  "actuals": {
-  "checkedAt": "2026-08-25T13:24:49.191Z",
+  "checkedAt": "2026-09-02T12:30:30.517Z",
   "avgScore": 50,
   "highest": 131,
   "mostCap": 223094,
@@ -2973,6 +2973,74 @@
    "c": 465730,
    "pts": 17
   },
-  "dreamTeamPts": 148
+  "dreamTeamPts": 148,
+  "dreamTeam": [
+   {
+    "c": 473284,
+    "n": "Tzolakis",
+    "pos": 1,
+    "pts": 10
+   },
+   {
+    "c": 465730,
+    "n": "De Cuyper",
+    "pos": 2,
+    "pts": 17
+   },
+   {
+    "c": 606930,
+    "n": "Mendy",
+    "pos": 2,
+    "pts": 15
+   },
+   {
+    "c": 146426,
+    "n": "Ajayi",
+    "pos": 2,
+    "pts": 14
+   },
+   {
+    "c": 607464,
+    "n": "Kayode",
+    "pos": 2,
+    "pts": 13
+   },
+   {
+    "c": 532529,
+    "n": "Hinshelwood",
+    "pos": 3,
+    "pts": 16
+   },
+   {
+    "c": 513545,
+    "n": "M.Sangaré",
+    "pos": 3,
+    "pts": 14
+   },
+   {
+    "c": 244851,
+    "n": "Palmer",
+    "pos": 3,
+    "pts": 13
+   },
+   {
+    "c": 466525,
+    "n": "Stach",
+    "pos": 3,
+    "pts": 13
+   },
+   {
+    "c": 243298,
+    "n": "Gakpo",
+    "pos": 3,
+    "pts": 12
+   },
+   {
+    "c": 475168,
+    "n": "João Pedro",
+    "pos": 4,
+    "pts": 11
+   }
+  ]
  }
 }
