@@ -3100,7 +3100,7 @@
   216051
  ],
  "actuals": {
-  "checkedAt": "2026-09-02T12:30:30.624Z",
+  "checkedAt": "2026-09-05T10:46:21.773Z",
   "avgScore": 81,
   "highest": 161,
   "mostCap": 223094,
@@ -3178,6 +3178,28 @@
     "pos": 4,
     "pts": 13
    }
-  ]
+  ],
+  "crowdWeek": {
+   "managers": 10464603,
+   "chips": {
+    "tripleCaptain": 233946,
+    "benchBoost": 338660,
+    "freeHit": 78863,
+    "wildcard": 279227
+   },
+   "mostOwned": {
+    "c": 475168,
+    "n": "João Pedro"
+   },
+   "mostIn": {
+    "c": 465730,
+    "n": "De Cuyper"
+   },
+   "top": {
+    "c": 141746,
+    "n": "B.Fernandes",
+    "pts": 23
+   }
+  }
  }
 }

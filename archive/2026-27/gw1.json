@@ -2963,7 +2963,7 @@
   486672
  ],
  "actuals": {
-  "checkedAt": "2026-09-02T12:30:30.517Z",
+  "checkedAt": "2026-09-05T10:46:21.474Z",
   "avgScore": 50,
   "highest": 131,
   "mostCap": 223094,
@@ -3041,6 +3041,28 @@
     "pos": 4,
     "pts": 11
    }
-  ]
+  ],
+  "crowdWeek": {
+   "managers": 10464603,
+   "chips": {
+    "tripleCaptain": 250816,
+    "benchBoost": 814606,
+    "freeHit": 0,
+    "wildcard": 0
+   },
+   "mostOwned": {
+    "c": 223094,
+    "n": "Haaland"
+   },
+   "mostIn": {
+    "c": 154561,
+    "n": "Raya"
+   },
+   "top": {
+    "c": 465730,
+    "n": "De Cuyper",
+    "pts": 17
+   }
+  }
  }
 }
