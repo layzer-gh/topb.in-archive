@@ -3081,7 +3081,7 @@
   433969
  ],
  "actuals": {
-  "checkedAt": "2026-11-03T18:08:24.323Z",
+  "checkedAt": "2026-11-03T18:23:09.622Z",
   "avgScore": 47,
   "highest": 122,
   "mostCap": 223094,
@@ -3161,7 +3161,7 @@
    }
   ],
   "crowdWeek": {
-   "managers": 11231859,
+   "managers": 11231958,
    "chips": {
     "tripleCaptain": 67122,
     "benchBoost": 107179,
