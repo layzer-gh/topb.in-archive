@@ -1,0 +1,40 @@
+# Starts topb.in's gameweek tick the moment FPL signs a gameweek off, and
+# makes sure the final read before each deadline is frozen. GitHub drops
+# most scheduled runs, so this runs often, exits in seconds when nothing is
+# due, and keeps itself alive while something is. See .github/watch.sh.
+name: watch
+on:
+  schedule:
+    - cron: "7,27,47 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: write   # to hand over to a fresh run of this workflow
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v5
+      - name: Watch
+        env:
+          # Starts tick.yml in the private repo (fine-grained, Actions only).
+          TICK_TOKEN: ${{ secrets.TICK_DISPATCH_TOKEN }}
+          SELF_TOKEN: ${{ github.token }}
+        run: |
+          # gh reads GH_TOKEN; the private repo needs the dispatch token, this
+          # repo its own. Wrap gh so each call uses the right one.
+          mkdir -p "$HOME/bin"
+          cat > "$HOME/bin/gh" <<'SH'
+          #!/usr/bin/env bash
+          if printf '%s ' "$@" | grep -q 'topb.in-archive'; then GH_TOKEN="$SELF_TOKEN" exec /usr/bin/gh "$@"; else GH_TOKEN="$TICK_TOKEN" exec /usr/bin/gh "$@"; fi
+          SH
+          chmod +x "$HOME/bin/gh"
+          export PATH="$HOME/bin:$PATH"
+          bash .github/watch.sh
