@@ -83,8 +83,10 @@ check() {
     else
       log "gameweek $(jq -r .gw "$next"): final read frozen ${hb}h out"
     fi
-  elif (( left > 21600 && left <= 25200 )); then
-    active=active  # stay up into the final-read window
+  elif (( left > 21600 && left <= 36000 )); then
+    # Stay up from 10h out: GitHub drops scheduled runs, so a run that lands
+    # anywhere in these hours carries on into the final-read window.
+    active=active
   fi
 
   STATE=$active
