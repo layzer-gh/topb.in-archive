@@ -25,7 +25,9 @@ epoch() { date -u -d "$1" +%s; }
 
 dispatch() {
   if (( $(now) - last_dispatch < GAP )); then log "tick started recently; waiting"; return; fi
-  if gh workflow run tick.yml -R layzer-gh/topb.in; then
+  # The REST call needs only the token's Actions permission (gh workflow run
+  # also looks up the default branch, which this token can't read).
+  if gh api -X POST repos/layzer-gh/topb.in/actions/workflows/tick.yml/dispatches -f ref=main --silent; then
     last_dispatch=$(now); log "started the tick: $1"
   else
     log "could not start the tick (token?)"
@@ -93,7 +95,7 @@ while :; do
   check
   [ "$STATE" = active ] || { log "nothing pending"; exit 0; }
   if (( $(now) - start > LIFETIME )); then
-    gh workflow run watch.yml -R layzer-gh/topb.in-archive && log "handed over to a fresh run"
+    gh api -X POST repos/layzer-gh/topb.in-archive/actions/workflows/watch.yml/dispatches -f ref=main --silent && log "handed over to a fresh run"
     exit 0
   fi
   sleep $POLL

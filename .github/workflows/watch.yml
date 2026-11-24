@@ -38,12 +38,12 @@ jobs:
           mkdir -p "$HOME/bin"
           cat > "$HOME/bin/gh" <<'SH'
           #!/usr/bin/env bash
-          if printf '%s ' "$@" | grep -q 'topb.in-archive'; then GH_TOKEN="$SELF_TOKEN" exec /usr/bin/gh "$@"; else GH_TOKEN="$TICK_TOKEN" exec /usr/bin/gh "$@"; fi
+          if printf '%s ' "$@" | grep -q 'topb\.in-archive'; then GH_TOKEN="$SELF_TOKEN" exec /usr/bin/gh "$@"; else GH_TOKEN="$TICK_TOKEN" exec /usr/bin/gh "$@"; fi
           SH
           chmod +x "$HOME/bin/gh"
           export PATH="$HOME/bin:$PATH"
           if [ "${{ inputs.test }}" = true ]; then
-            gh workflow run tick.yml -R layzer-gh/topb.in -f dry=true && echo "token OK: dry-run tick started"
+            gh api -X POST repos/layzer-gh/topb.in/actions/workflows/tick.yml/dispatches -f ref=main -f "inputs[dry]=true" --silent && echo "token OK: dry-run tick started"
             exit $?
           fi
           bash .github/watch.sh
